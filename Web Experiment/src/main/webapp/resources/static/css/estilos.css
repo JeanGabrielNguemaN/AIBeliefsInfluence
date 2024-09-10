@@ -1,0 +1,217 @@
+	* {
+					  box-sizing: border-box;
+					}
+
+					body {
+					  margin: 0;
+					  background-color: #f1f1f1;
+					}
+
+					/* Style the header */
+					.header {
+					  background-color: #f1f1f1;
+					  color:grey;
+					  padding: 10px;
+					  text-align: center;
+					}
+
+					/* Style the top navigation bar */
+					.topnav {
+					  overflow: hidden;
+					  background-color: #808080;
+					}
+
+					/* Style the topnav links */
+					.topnav a {
+					  float: left;
+					  display: block;
+					  color: #f2f2f2;
+					  text-align: center;
+					  padding: 14px 16px;
+					  text-decoration: none;
+					}
+
+					/* Change color on hover */
+					.topnav a:hover {
+					  background-color: #ddd;
+					  color: black;
+					}
+					
+					.topitems {
+					  overflow: hidden;
+					  position: relative;
+					  left: 350px;
+					  background-color: #808080;
+					}
+
+					/* Style the topnav links */
+					.topitems a {
+					  float: left;
+					  display: block;
+					  color: #f2f2f2;
+					  text-align: center;
+					  padding: 14px 16px;
+					  text-decoration: none;
+					}
+
+					/* Change color on hover */
+					.topitems a:hover {
+					  background-color: #ddd;
+					  color: black;
+					}
+
+					/* Create three unequal columns that floats next to each other */
+					.column {
+					  float: left;
+					  padding: 10px;
+					}
+
+					/* Left and right column */
+					.column.side {
+					  width: 25%;
+					 
+					}
+
+					.column.right {
+					  width: 30%;
+					}
+
+					/* Middle column */
+					.column.middle {
+					  width: 50%;
+					  height:100%;
+					  background-color: white;
+					  border-radius: 25px;
+					}
+
+					/* Clear floats after the columns */
+
+					.row {
+					  height:600px;
+					 
+					}
+					.row:after {
+					  content: "";
+					  display: table;
+					  clear: both;
+					}
+
+					.rodape {
+							   position: relative;
+							   left: 0;
+							   bottom: 0;
+							   width: 100%;
+							   color:black;
+							   text-align: center;
+							   
+							 
+					}
+
+					/* Formatação lista de chamados*/
+					#visitas {
+					  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+					  font-size:11px;
+					  border-collapse: collapse;
+					  
+					}
+
+					#visitas td, #visitas th {
+					  padding: 8px;
+					}
+
+					#visitas tr:nth-child(even){background-color: #f2f2f2;}
+
+					#visitas tr:hover {background-color: #ddd;}
+
+					#visitas th {
+					  padding-top: 12px;
+					  padding-bottom: 12px;
+					  text-align: left;
+					  background-color: #027e9b;
+					  color: white;
+					}		
+					#divvisitas{
+						position: relative;
+						left: 0;
+						bottom: 0;
+						margin-top: 20px;
+						margin-left: 60px;
+						width: 65%;
+					}
+					#divdetalhes{
+						position: relative;
+						left: 0;
+						bottom: 0;
+						margin-top: 20px;
+						margin-left: 60px;
+						width: 85%;
+					}
+
+
+					fieldset {
+							  display: block;
+							  margin-left: 2px;
+							  margin-right: 2px;
+							  padding-top: 0.35em;
+							  padding-bottom: 0.625em;
+							  padding-left: 0.75em;
+							  padding-right: 0.75em;
+							  border: 2px groove (internal value);
+					}
+
+
+
+
+					/* Create three equal columns that floats next to each other */
+					.col {
+					  float: left;
+					  padding: 10px;
+					  /* height: 300px; */ /*Should be removed. Only for demonstration */
+					}
+
+					/* Clear floats after the columns */
+					.rows:after {
+					  content: "";
+					  display: table;
+					  clear: both;
+					}
+
+					/* Middle column */
+					.col.side {
+					  width: 20%;
+					}
+
+					.col.but {
+					  width: 30%;
+					}
+					
+					
+					/* Create three equal columns that floats next to each other */
+					.navcol {
+					  float: left;
+					  /*padding: 10px;*/
+					  /* height: 300px; */ /*Should be removed. Only for demonstration */
+					}
+
+					/* Clear floats after the columns */
+					.navrow:after {
+					  content: "";
+					  display: table;
+					  clear: both;
+					}
+
+					/* Middle column */
+					.navcol.mid {
+					  width: 70%;
+					}
+
+					.navcol.side {
+					  width: 30%;
+					}
+						
+					/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+					@media screen and (max-width: 600px) {
+					  .column.side, .column.middle {
+						width: 100%;
+					  }
+			}

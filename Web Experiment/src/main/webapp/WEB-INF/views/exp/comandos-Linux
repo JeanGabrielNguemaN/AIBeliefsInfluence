@@ -1,0 +1,9 @@
+#!/bin/sh
+ls
+
+
+/opt/tomcat8/bin/startup.sh
+
+/opt/tomcat8/bin/shutdown.sh
+
+ mv /home/jean.ngomo/secureweb03.war /opt/tomcat8/webapps/iacrowdcontrafakenews.war

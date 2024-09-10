@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f1f1f1;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #808080;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 10%;
+ 
+}
+
+.column.right {
+  width: 30%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+  height:100%;
+  background-color: white;
+  border-radius: 25px;
+}
+
+/* Clear floats after the columns */
+
+.row {
+  height:600px;
+ 
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.rodape {
+		   position: relative;
+		   left: 0;
+		   bottom: 0;
+		   width: 100%;
+		   color:black;
+		   text-align: center;
+		   
+		 
+}
+
+/* Formatação lista de chamados*/
+#chamados {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size:11px;
+  border-collapse: collapse;
+  
+}
+
+#chamados td, #chamados th {
+  padding: 8px;
+}
+
+#chamados tr:nth-child(even){background-color: #f2f2f2;}
+
+#chamados tr:hover {background-color: #ddd;}
+
+#chamados th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #027e9b;
+  color: white;
+}		
+#divchamados{
+	position: relative;
+    left: 0;
+	bottom: 0;
+	margin-top: 20px;
+	margin-left: 60px;
+	
+	width: 80%;
+  
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}

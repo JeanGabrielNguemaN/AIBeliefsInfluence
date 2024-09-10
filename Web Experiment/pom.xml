@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.1.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	
+	<groupId>org.jgnn.web</groupId>
+    <artifactId>secureweb03</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>secureweb03</name>
+    <description>Versão autentica usuarios via JPA em um SGBD</description>
+	
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+     
+        
+        <!-- Spring -->
+        <org.springframework.version>5.0.2.RELEASE</org.springframework.version>
+        <spring.old.version>4.3.16.RELEASE</spring.old.version>
+        <spring.version>5.2.7.RELEASE</spring.version>
+        <org.springframework.data.version>1.10.6.RELEASE</org.springframework.data.version>
+        <org.springframework.security.version>4.2.1.RELEASE</org.springframework.security.version>
+
+        <!-- persistence -->
+        <hibernate.version>5.2.10.Final</hibernate.version>
+        <hibernatesearch.version>5.8.2.Final</hibernatesearch.version>
+        <mysql-connector-java.version>8.0.32</mysql-connector-java.version>
+        <tomcat-dbcp.version>8.5.56</tomcat-dbcp.version>
+        <jta.version>1.1</jta.version>
+		
+		<!--Teste JUnit-->
+        <junit.jupiter.version>5.6.2</junit.jupiter.version>
+		
+		<!--Teste-->
+		
+		<webapps.home>C:/Servidores/apache-tomcat-8.5.56/webapps</webapps.home>
+ 
+		<parent.basedir>${basedir}/..</parent.basedir>
+		
+		<plugin.dir>Kettle4DBpedia/${project.name}</plugin.dir>
+		
+		<pdi.plugin.lib_name>${project.artifactId}</pdi.plugin.lib_name>
+	</properties>
+
+	<dependencies>
+	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<!--
+        <dependency>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-jasper</artifactId>
+		    <scope>provided</scope>
+		</dependency>
+		-->
+		
+		<dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-starter-tomcat</artifactId>
+		   <scope>provided</scope>
+		</dependency>
+
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jstl</artifactId>
+		</dependency>
+		
+         
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-web</artifactId>
+		   
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!-- standard validation APIs for java bean validation-->
+		<dependency>
+		    <groupId>javax.validation</groupId>
+		    <artifactId>validation-api</artifactId>
+		    <version>2.0.1.Final</version>
+		</dependency>
+		
+		<!--  -->
+		<dependency>
+		    <groupId>org.hibernate.validator</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>6.0.13.Final</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		  <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
+        </dependency>
+        
+        <!-- For Sending Email -->
+		<dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+		
+		
+		<dependency>
+		  <groupId>javax.xml.bind</groupId>
+		  <artifactId>jaxb-api</artifactId>
+		  <version>2.3.1</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.glassfish.jaxb</groupId>
+		  <artifactId>jaxb-runtime</artifactId>
+		  <version>2.3.1</version>
+		</dependency>
+    </dependencies>
+
+	<build>
+		<finalName>${artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<id>copy-files-to-tomcat</id>
+						<phase>install</phase>
+						<configuration>
+							<target name="copy-files-to-tomcat">
+								
+								
+								<echo
+									message="Copying ${project.build.directory}\${project.build.finalName}.${project.packaging} to ${webapps.home}" />
+								<copy
+									file="${project.build.directory}/${project.build.finalName}.${project.packaging}"
+									tofile="${webapps.home}/${project.artifactId}.${project.packaging}"
+									overwrite="true" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
