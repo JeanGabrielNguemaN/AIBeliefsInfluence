@@ -2,11 +2,11 @@ This project contains artifacts built in the context of research, which aims to 
  * Author: Jean Gabriel Nguema Ngomo (mvojgnn@gmail.com).
  * Licence: Apache License, Version 2.0.
 
-# Description
-## Web Experimet
-Web interface presenting experiment steps
 
-## Installation
+# Experiment web system
+This is a web system built using Java technology. It contains all the code built to carry out the experiment, enabling anonymous participation of people in the research experiment.
+
+# Installation
 
 1.	Java 8 or higher.
 
