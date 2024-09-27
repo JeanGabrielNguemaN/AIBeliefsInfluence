@@ -10,6 +10,10 @@ This is a web system built using Java technology. It contains all the code built
 
 1.	Java 8 or higher.
 
-2.	MySQL Database 5.5 or higher. 
+2.	Maven 3.6 or higher
 
-3.	Java web application server, preferably Tomcat 8 or higher. 
+3.	Spring boot
+
+4.	Java web application server, preferably Tomcat 8 or higher. 
+
+3.	MySQL Database 5.5 or higher. 
