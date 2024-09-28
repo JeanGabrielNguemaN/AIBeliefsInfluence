@@ -15,7 +15,7 @@ This is a web system built using Java technology. It contains all the code built
 
 2.	Maven 3.6 or higher
 
-3.	Spring boot
+3.	Spring boot 2.4
 
 4.	Java web application server, preferably Tomcat 8 or higher. 
 
